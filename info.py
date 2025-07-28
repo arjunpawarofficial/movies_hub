@@ -4,11 +4,7 @@ from Script import script
 
 id_pattern = re.compile(r'^.\d+$')
 
-async def get_movie_link(movie_name):
-    # Dummy placeholder for demonstration
-    return f"https://example.com/download/{movie_name.replace(' ', '_')}"
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("🎬 Welcome! Send /movie <movie name> to get download link.")
+
     
 def is_enabled(value, default):
     if value.lower() in ["true", "yes", "1", "enable", "y"]:
@@ -29,7 +25,7 @@ ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ
 USERNAME = environ.get('USERNAME', "https://t.me/arjunsinghpawar") # ADMIN USERNAME
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002871007520'))
 
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002057315869').split()]
+
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://arjunsinghpawar855:arjunsinghpawar855@movieshub.jw0ol0o.mongodb.net/?retryWrites=true&w=majority&appName=MoviesHub")
@@ -45,7 +41,7 @@ LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '0'))
 auth_channel = environ.get('AUTH_CHANNEL', '')
 SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '0'))
 request_channel = environ.get('REQUEST_CHANNEL', '0')
-MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '0'))
+
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/arjunsinghpawar') #Support group link ( make sure bot is admin )
 #---------------------------------------------------------------
 #---------------------------------------------------------------

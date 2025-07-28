@@ -1,5 +1,5 @@
 import re 
-import Update
+from telegram import Update
 from os import environ,getenv
 import ContextTypes
 from Script import script

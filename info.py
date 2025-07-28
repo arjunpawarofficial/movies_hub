@@ -1,5 +1,7 @@
-import re import Update
-from os import environ,getenv, ContextTypes
+import re 
+import Update
+from os import environ,getenv
+import ContextTypes
 from Script import script
 
 id_pattern = re.compile(r'^.\d+$')

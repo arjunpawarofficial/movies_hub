@@ -3,6 +3,13 @@ from os import environ,getenv
 from Script import script
 
 id_pattern = re.compile(r'^.\d+$')
+
+async def get_movie_link(movie_name):
+    # Dummy placeholder for demonstration
+    return f"https://example.com/download/{movie_name.replace(' ', '_')}"
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("🎬 Welcome! Send /movie <movie name> to get download link.")
+    
 def is_enabled(value, default):
     if value.lower() in ["true", "yes", "1", "enable", "y"]:
         return True
@@ -21,7 +28,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN', '7528458385:AAHmbU_m9L6pZpxy-F8dKJzu4sfnxDQ
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1897434785').split()]
 USERNAME = environ.get('USERNAME', "https://t.me/arjunsinghpawar") # ADMIN USERNAME
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002871007520'))
-MOVIE_GROUP_LINK = environ.get('MOVIE_BOT_LINK', 'https://t.me/Enter10_Movies_Hub_official_bot')
+
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002057315869').split()]
 #---------------------------------------------------------------
 #---------------------------------------------------------------
